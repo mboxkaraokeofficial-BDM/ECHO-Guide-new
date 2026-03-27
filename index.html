@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MBOX ECHO PRO - Official Manual (Offline & MPad Ready)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --neon-blue: #3b82f6;
+        --neon-cyan: #22d3ee;
+        --neon-pink: #f472b6;
+    }
+    body {
+        font-family: 'Noto Sans Thai', sans-serif;
+        background: radial-gradient(circle at top right, #0f172a, #000000, #020617);
+        color: #f1f5f9;
+        overflow-x: hidden;
+        font-size: 1.25rem; 
+    }
+    .glass-card {
+        background: rgba(15, 23, 42, 0.75);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(59, 130, 246, 0.25);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+    }
+    .neon-border { border: 1px solid rgba(34, 211, 238, 0.5); box-shadow: 0 0 25px rgba(34, 211, 238, 0.2); }
+    .keyboard-key {
+        display: inline-block;
+        background: #1e293b;
+        border: 1px solid #475569;
+        border-bottom-width: 5px;
+        border-radius: 10px;
+        padding: 6px 16px;
+        font-family: monospace;
+        font-weight: 800;
+        color: var(--neon-cyan);
+        text-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
+    }
+    .step-node {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: var(--neon-blue);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 1.8rem;
+        box-shadow: 0 0 20px var(--neon-blue);
+    }
+
+    .ai-bubble {
+        background: rgba(59, 130, 246, 0.2);
+        border-left: 5px solid var(--neon-blue);
+        animation: slideIn 0.3s ease-out;
+    }
+    @keyframes slideIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .custom-scrollbar::-webkit-scrollbar { width: 8px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: var(--neon-blue); border-radius: 10px; }
+</style>
+</head>
+<body class="antialiased selection:bg-cyan-500 selection:text-slate-900">
+
+<nav class="fixed top-0 w-full z-50 glass-card border-b border-blue-900/40 py-5 px-8">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="font-black text-3xl tracking-tighter uppercase italic">MBOX <span class="text-blue-500">ECHO PRO</span></div>
+        <div class="hidden lg:flex space-x-10 text-sm font-bold uppercase tracking-[0.2em]">
+            <a href="#setup" class="hover:text-cyan-400 transition-all">Setup</a>
+            <a href="#quickstart" class="hover:text-cyan-400 transition-all">Quick Start</a>
+            <a href="#mpad" class="hover:text-cyan-400 transition-all">MPad2</a>
+            <a href="#shortcuts" class="hover:text-cyan-400 transition-all">Shortcuts</a>
+            <a href="#contact" class="hover:text-cyan-400 transition-all text-pink-400">Licensing</a>
+        </div>
+    </div>
+</nav>
+
+<header class="pt-48 pb-24 px-8 relative overflow-hidden flex flex-col items-center justify-center min-h-screen">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-blue-600/10 rounded-full blur-[150px] -z-10"></div>
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div class="space-y-10 order-2 lg:order-1 text-center lg:text-left">
+            <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-blue-900/30 border border-blue-500/30 text-cyan-400 text-sm font-bold uppercase tracking-[0.3em]">
+                Smart Intelligent Entertainment Solution
+            </div>
+            <h1 class="text-7xl md:text-8xl font-black leading-[1] tracking-tighter text-white uppercase">
+                MBOX <span class="text-blue-500">ECHO PRO</span>
+            </h1>
+            <p class="text-2xl text-slate-400 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                ระบบคาราโอเกะความจุสูงระดับโปร <br> <span class="text-white font-bold underline decoration-blue-500">พร้อมใช้งานแบบ Offline 100%</span>
+            </p>
+            <div class="flex flex-wrap gap-6 justify-center lg:justify-start">
+                <a href="#setup" class="px-12 py-5 bg-blue-600 hover:bg-blue-500 transition-all text-white font-bold rounded-2xl shadow-[0_0_40px_rgba(37,99,235,0.4)] text-2xl">
+                    เริ่มต่อเครื่อง
+                </a>
+            </div>
+        </div>
+        <div class="order-1 lg:order-2 relative flex justify-center">
+            <div class="relative group">
+                <div class="absolute -inset-2 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-[4rem] blur opacity-40 group-hover:opacity-70 transition duration-1000"></div>
+                <div class="relative p-10 glass-card rounded-[4rem] neon-border">
+                    <img src="mini-spark.png" alt="MBOX ECHO PRO" class="w-full max-w-md h-auto transform transition duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/600x400/1e293b/38bdf8?text=MBOX+ECHO+PRO'">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-8 space-y-48 pb-48">
+
+    <!-- Section 1: Hardware Setup -->
+    <section id="setup" class="scroll-mt-32">
+        <div class="mb-16 text-center max-w-4xl mx-auto">
+            <h2 class="text-5xl font-bold text-white mb-8 uppercase tracking-tight border-b-4 border-blue-500 inline-block pb-2">1. การติดตั้งฮาร์ดแวร์ (Hardware Setup)</h2>
+            <p class="text-2xl text-slate-400 leading-relaxed">ประกอบง่าย เชื่อมต่อเสถียร พร้อมร้องทันที</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div class="glass-card p-12 rounded-[3rem] border-t-8 border-blue-500 space-y-6">
+                <div class="step-node">01</div>
+                <h4 class="text-3xl font-bold text-white uppercase">Connectivity</h4>
+                <p class="text-xl text-slate-400 leading-relaxed">
+                    นำ **เสา Wi-Fi** มาต่อเข้าหลังเครื่องเพื่อรับสัญญาณสำหรับ Tablet และเสียบสาย **RCA (แดง-ขาว)** เข้าเครื่องเสียง
+                </p>
+            </div>
+            <div class="glass-card p-12 rounded-[3rem] border-t-8 border-pink-500 space-y-6">
+                <div class="step-node bg-pink-500 shadow-pink-500">02</div>
+                <h4 class="text-3xl font-bold text-white uppercase">Control</h4>
+                <p class="text-xl text-slate-400 leading-relaxed">
+                    เสียบตัวรับสัญญาณคีย์บอร์ดผ่าน **สาย USB สีฟ้า** พ่วงออกมารับสัญญาณด้านนอกเพื่อความเสถียรสูงสุด
+                </p>
+            </div>
+            <div class="glass-card p-12 rounded-[3rem] border-t-8 border-cyan-500 space-y-6">
+                <div class="step-node bg-cyan-500 shadow-cyan-500">03</div>
+                <h4 class="text-3xl font-bold text-white uppercase">Plug & Play</h4>
+                <p class="text-xl text-slate-400 leading-relaxed">
+                    ต่อสาย **HDMI** และ **Adapter** ให้เรียบร้อย จากนั้นเปิดสวิตช์เครื่องเพื่อเริ่มความสนุกได้ทันที
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Quick Start -->
+    <section id="quickstart" class="scroll-mt-32">
+        <div class="mb-16 max-w-4xl">
+            <h2 class="text-5xl font-bold text-white mb-8 uppercase tracking-tight border-l-[12px] border-blue-600 pl-8">2. การเปิดใช้งานครั้งแรก (Quick Start)</h2>
+            <p class="text-2xl text-slate-400">ระบบพร้อมทำงานในรูปแบบ Offline 100%</p>
+        </div>
+
+        <div class="glass-card p-16 rounded-[4rem] overflow-hidden relative">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="space-y-12">
+                    <div class="flex gap-8 items-start">
+                        <span class="text-7xl">⚡</span>
+                        <div>
+                            <h4 class="text-3xl font-bold text-white mb-3">Instant Access</h4>
+                            <p class="text-xl text-slate-400 leading-relaxed">
+                                รุ่น ECHO PRO มีความจุมาให้พร้อมในเครื่อง <span class="text-cyan-400 font-bold underline">ไม่จำเป็นต้องต่ออินเทอร์เน็ต</span> ในครั้งแรก สามารถใช้งานได้ทันทีที่เปิดเครื่อง
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-8 items-start">
+                        <span class="text-7xl">📦</span>
+                        <div>
+                            <h4 class="text-3xl font-bold text-white mb-3">Internal Storage</h4>
+                            <p class="text-xl text-slate-400 leading-relaxed">
+                                มั่นใจด้วยความจุที่รองรับรายการเพลงทั้งหมดแบบออฟไลน์ เสถียรที่สุดสำหรับสถานประกอบการ
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-blue-900/25 p-12 rounded-[3rem] border border-blue-500/40 text-center">
+                    <h5 class="text-blue-300 font-black text-2xl uppercase tracking-widest mb-4">Offline Advantage</h5>
+                    <p class="text-xl text-slate-300 leading-relaxed italic">
+                        "บริการลูกค้าได้อย่างต่อเนื่อง ไร้กังวลแม้เกิดปัญหาเครือข่ายอินเทอร์เน็ตล่ม"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: MPad2 Connection Session (Requested Section) -->
+    <section id="mpad" class="scroll-mt-32">
+        <div class="mb-16 text-center max-w-4xl mx-auto">
+            <h2 class="text-5xl font-bold text-white mb-8 uppercase tracking-tight border-b-4 border-pink-500 inline-block pb-2">3. การเชื่อมต่อผ่านแอป MPad2</h2>
+            <p class="text-2xl text-slate-400 leading-relaxed">เปลี่ยน Smartphone หรือ Tablet เป็นรีโมทอัจฉริยะ</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div class="glass-card p-12 rounded-[3rem] space-y-10">
+                <div class="flex gap-8 items-start">
+                    <div class="w-12 h-12 rounded-full bg-pink-500 flex items-center justify-center font-bold text-2xl flex-shrink-0">1</div>
+                    <div>
+                        <h4 class="text-2xl font-bold text-white mb-2">ดาวน์โหลดแอปพลิเคชัน</h4>
+                        <p class="text-lg text-slate-400 leading-relaxed">ค้นหาแอป **"Mpad2"** ใน App Store (iOS) หรือ Google Play Store (Android) และดำเนินการติดตั้งลงบนมือถือหรือแท็บเล็ต</p>
+                    </div>
+                </div>
+                <div class="flex gap-8 items-start">
+                    <div class="w-12 h-12 rounded-full bg-pink-500 flex items-center justify-center font-bold text-2xl flex-shrink-0">2</div>
+                    <div>
+                        <h4 class="text-2xl font-bold text-white mb-2">เรียก QR Code บนจอ TV</h4>
+                        <p class="text-lg text-slate-400 leading-relaxed">กดปุ่ม <span class="keyboard-key text-sm">F1</span> บนคีย์บอร์ดที่ต่อกับเครื่อง MBOX เพื่อแสดงหน้าต่างวิธีการใช้งานและ QR Code สำหรับเชื่อมต่อที่หน้าจอทีวี</p>
+                    </div>
+                </div>
+                <div class="flex gap-8 items-start">
+                    <div class="w-12 h-12 rounded-full bg-pink-500 flex items-center justify-center font-bold text-2xl flex-shrink-0">3</div>
+                    <div>
+                        <h4 class="text-2xl font-bold text-white mb-2">แสกนเพื่อเชื่อมต่อ</h4>
+                        <p class="text-lg text-slate-400 leading-relaxed">เปิดแอป Mpad2 ในมือถือ เลือกฟังก์ชัน **แสกน** และเล็งกล้องไปที่ QR Code บนจอทีวี ข้อมูลคิวเพลงจะซิงค์กันทันที</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card p-12 rounded-[3rem] flex flex-col items-center justify-center bg-gradient-to-br from-pink-900/20 to-transparent relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-pink-500/10 rounded-full blur-3xl"></div>
+                <div class="p-8 bg-white rounded-3xl shadow-[0_0_50px_rgba(244,114,182,0.3)] mb-8 transform hover:scale-105 transition-transform">
+                    <!-- Placeholder for QR-mpad.jpg -->
+                    <img src="QR-mpad.jpg" alt="Download Mpad2" class="w-64 h-64 object-contain" onerror="this.src='https://placehold.co/300x300/ffffff/000000?text=Scan+QR+Code'">
+                </div>
+                <div class="text-center">
+                    <h5 class="text-pink-400 font-black text-xl uppercase tracking-[0.3em] mb-2">Digital Control Hub</h5>
+                    <p class="text-slate-400 italic font-light">"ค้นหาเพลงได้ง่ายๆ จากที่นั่งของคุณเอง"</p>
+                    <div class="mt-4 p-3 bg-red-900/30 border border-red-500/40 rounded-xl text-xs text-red-300">
+                        *หมายเหตุ: มือถือและเครื่อง MBOX ต้องอยู่บน Wi-Fi วงเดียวกัน
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Keyboard Shortcuts -->
+    <section id="shortcuts" class="scroll-mt-32">
+        <div class="mb-16 text-center max-w-4xl mx-auto">
+            <h2 class="text-5xl font-bold text-white mb-8 uppercase tracking-tight underline decoration-cyan-500 decoration-4 underline-offset-8">4. คีย์ลัด Wireless Keyboard (Shortcuts)</h2>
+            <p class="text-2xl text-slate-400 leading-relaxed">ควบคุมการใช้งานทั้งหมดผ่านแผงคีย์บอร์ดเดียว</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div class="glass-card p-12 rounded-[3rem] space-y-8">
+                <h4 class="text-3xl font-black text-blue-400 uppercase border-b border-slate-800 pb-4">Navigation & Basic</h4>
+                <div class="space-y-6 text-xl">
+                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-blue-500 transition-all"><span>ย้อนกลับ / ปิดโปรแกรม</span> <span class="keyboard-key">ESC</span></div>
+                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-blue-500 transition-all"><span>ตรวจสอบการเชื่อมต่อ</span> <span class="keyboard-key">F4</span></div>
+                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-cyan-500 transition-all font-bold text-cyan-400"><span>สลับ ค้นหาเพลง / คิวเพลง</span> <span class="keyboard-key">TAB</span></div>
+                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-blue-500 transition-all"><span>ตกลง / เลือกเพลง</span> <span class="keyboard-key">ENTER</span></div>
+                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-blue-500 transition-all"><span>ซ่อนหน้าจอ</span> <span class="keyboard-key">F12</span></div>
+                </div>
+            </div>
+
+            <div class="glass-card p-12 rounded-[3rem] space-y-8">
+                <h4 class="text-3xl font-black text-pink-500 uppercase border-b border-slate-800 pb-4">Audio & Control</h4>
+                <div class="space-y-6 text-xl">
+                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-pink-500 transition-all"><span>ตัดเสียงร้อง (โหมดเสียง)</span> <span class="keyboard-key">F8</span></div>
+                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-pink-500 transition-all"><span>เล่น / หยุดชั่วคราว</span> <span class="keyboard-key">F7</span></div>
+                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-pink-500 transition-all"><span>ข้ามไปเพลงถัดไป</span> <span class="keyboard-key">F10</span></div>
+                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-pink-500 transition-all font-bold text-pink-400"><span>แทรกคิวเพลง (เล่นด่วน)</span> <span class="keyboard-key uppercase">INSERT</span></div>
+                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-pink-500 transition-all"><span>เพิ่ม / ลดเสียง</span> <span class="keyboard-key">F6 / F5</span></div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2 glass-card p-12 rounded-[3rem] grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="flex justify-between items-center bg-blue-900/20 p-8 rounded-2xl border border-blue-500/30">
+                    <span class="text-2xl font-bold">สร้างรายการเพลงโปรด / เลือก</span>
+                    <span class="keyboard-key">F2 / F3</span>
+                </div>
+                <div class="flex justify-between items-center bg-blue-900/20 p-8 rounded-2xl border border-blue-500/30">
+                    <span class="text-2xl font-bold text-blue-400">เลือกหมวดหมู่ภาษา</span>
+                    <span class="keyboard-key">← / →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI ASSISTANT EXPERT ✨ -->
+    <section id="ai-support" class="scroll-mt-32">
+        <div class="mb-16 text-center max-w-4xl mx-auto">
+            <h2 class="text-5xl font-bold text-white mb-8 tracking-tight">✨ AI Technical Support Expert</h2>
+            <p class="text-xl text-slate-400">พิมพ์ถามปัญหาการใช้งานจาก AI อัจฉริยะได้ทันที</p>
+        </div>
+
+        <div class="glass-card p-12 rounded-[4rem] border border-cyan-500/40">
+            <div class="flex flex-col gap-8 h-[550px]">
+                <div id="ai-chat-box" class="flex-1 overflow-y-auto space-y-6 p-8 custom-scrollbar rounded-[2rem] bg-black/40 border border-slate-800">
+                    <div class="ai-bubble p-6 rounded-[2rem] max-w-[85%] shadow-xl">
+                        <p class="text-xl">สวัสดีครับ! ผมคือ AI Expert พร้อมช่วยเหลือเรื่องการใช้งาน MBOX ECHO PRO ครับ คุณติดขัดเรื่องการต่อเครื่อง การใช้แอป หรือต้องการทราบปุ่มลัดส่วนไหน สอบถามได้เลยครับ</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-4 px-4">
+                    <button onclick="askAI('ต่อ MPad2 ยังไง?')" class="text-sm font-bold bg-slate-800 hover:bg-blue-900 px-5 py-2 rounded-full border border-slate-700 transition-all text-cyan-400">✨ ต่อ MPad2 ยังไง?</button>
+                    <button onclick="askAI('ปุ่มลัดที่ใช้บ่อยมีอะไรบ้าง?')" class="text-sm font-bold bg-slate-800 hover:bg-blue-900 px-5 py-2 rounded-full border border-slate-700 transition-all text-cyan-400">✨ ปุ่มลัดยอดนิยม</button>
+                </div>
+
+                <div class="relative px-2">
+                    <input type="text" id="ai-input" placeholder="พิมพ์คำถามของคุณที่นี่..." class="w-full bg-slate-900 border border-slate-700 rounded-[2rem] py-6 pl-10 pr-24 focus:outline-none focus:border-cyan-500 transition-all text-xl">
+                    <button id="ai-send-btn" class="absolute right-6 top-4 p-3 bg-blue-600 hover:bg-blue-500 rounded-2xl transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Licensing & Contact -->
+    <section id="contact" class="scroll-mt-32">
+        <div class="mb-16 max-w-4xl">
+            <h2 class="text-5xl font-bold text-white mb-8 uppercase tracking-tight border-l-[12px] border-red-600 pl-8">5. ลิขสิทธิ์และการติดต่อ</h2>
+            <p class="text-2xl text-slate-400">การดำเนินธุรกิจอย่างถูกต้องและช่องทาง Support</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div class="glass-card p-12 rounded-[3rem] border-l-8 border-red-500 bg-red-950/10 space-y-8">
+                <h4 class="text-3xl font-bold text-red-500 flex items-center gap-4"><span>⚖️</span> ลิขสิทธิ์สำหรับร้านอาหาร</h4>
+                <p class="text-2xl text-slate-200 leading-relaxed font-light italic">
+                    "การเปิดเพลงในสถานประกอบการจำเป็นต้องมีใบอนุญาตเผยแพร่ที่ถูกต้อง"
+                </p>
+                <div class="p-6 bg-slate-900/60 rounded-2xl border border-slate-800 text-lg text-slate-300">
+                    MBOX พร้อมดูแลร้านของท่านให้ใช้งานได้อย่างถูกต้อง ไร้กังวลเรื่องกฎหมายลิขสิทธิ์
+                </div>
+            </div>
+            
+            <div class="glass-card p-12 rounded-[3rem] border-l-8 border-green-500 space-y-8">
+                <h4 class="text-3xl font-bold text-green-400 flex items-center gap-4"><span>📞</span> ช่องทางการติดต่อ</h4>
+                <div class="space-y-6">
+                    <a href="https://line.me/ti/p/@mboxkaraoke" target="_blank" class="flex items-center gap-6 p-6 bg-green-900/30 rounded-2xl border border-green-500/50 hover:scale-105 transition-all w-full">
+                        <span class="text-4xl">🟢</span>
+                        <div>
+                            <p class="text-xs uppercase font-bold text-green-400 tracking-widest">Line Official</p>
+                            <p class="text-3xl font-bold">@mboxkaraoke</p>
+                        </div>
+                    </a>
+                    <div class="flex items-center gap-6 p-6 bg-slate-800/40 rounded-2xl border border-slate-700 w-full">
+                        <span class="text-4xl">📱</span>
+                        <div>
+                            <p class="text-xs uppercase font-bold text-slate-400 tracking-widest">Hotline Support</p>
+                            <p class="text-2xl font-bold text-white">086-321-3965 | 086-552-5502</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-black/90 py-24 px-8 text-center border-t border-slate-900">
+    <div class="max-w-7xl mx-auto opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all mb-12">
+        <img src="MBOX_B.jpg" alt="MBOX Logo" class="h-10 mx-auto" onerror="this.style.display='none'">
+    </div>
+    <p class="text-xs font-black tracking-[0.6em] text-slate-600 uppercase mb-6">MBOX ECHO PRO - High Stability Offline Karaoke</p>
+    <p class="text-sm text-slate-700 uppercase tracking-widest">© 2024 MBOX Multimedia Co., Ltd. สงวนลิขสิทธิ์</p>
+</footer>
+
+<script>
+    const apiKey = "";
+    const systemPrompt = `คุณคือผู้เชี่ยวชาญฝ่ายเทคนิคของ MBOX ECHO PRO 
+    ตอบคำถามโดยอ้างอิงจากข้อมูลเหล่านี้:
+    1. ECHO PRO เล่นแบบ Offline ได้ 100% เพราะมีเพลงในเครื่อง ไม่ต้องต่อเน็ตเพื่อเริ่มใช้งาน
+    2. การต่อ MPad2: กด F1 เพื่อโชว์ QR Code บนจอ TV แล้วใช้แอป Mpad2 ในมือถือแสกนเชื่อมต่อ
+    3. สำคัญ: มือถือและเครื่อง MBOX ต้องอยู่บนวง WiFi ชื่อเดียวกันเพื่อให้แอปหาเครื่องเจอ
+    4. ลิขสิทธิ์: ร้านอาหารต้องขออนุญาต ติดต่อ LINE: @mboxkaraoke
+    5. คีย์ลัด: F1(QR), F8(เสียง), TAB(สลับค้นหา/คิว), F10(ข้าม), INSERT(แทรก)
+    ตอบเป็นภาษาไทยที่สุภาพ ชัดเจน และตรงไปตรงมา`;
+
+    async function callGemini(query) {
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+        const payload = {
+            contents: [{ parts: [{ text: query }] }],
+            systemInstruction: { parts: [{ text: systemPrompt }] }
+        };
+        let delay = 1000;
+        for (let i = 0; i < 5; i++) {
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    return data.candidates?.[0]?.content?.parts?.[0]?.text;
+                }
+            } catch (err) {}
+            await new Promise(r => setTimeout(r, delay));
+            delay *= 2;
+        }
+        return "ขออภัยครับ ระบบ AI ขัดข้องชั่วคราว กรุณาลองใหม่อีกครั้ง หรือติดต่อ Line: @mboxkaraoke ครับ";
+    }
+
+    const chatBox = document.getElementById('ai-chat-box');
+    const aiInput = document.getElementById('ai-input');
+    const sendBtn = document.getElementById('ai-send-btn');
+
+    async function handleAISubmit() {
+        const text = aiInput.value.trim();
+        if (!text) return;
+        appendMessage('user', text);
+        aiInput.value = '';
+        const loadingId = 'loading-' + Date.now();
+        const loadingBubble = document.createElement('div');
+        loadingBubble.id = loadingId;
+        loadingBubble.className = 'ai-bubble p-6 rounded-[2rem] max-w-[85%]';
+        loadingBubble.innerHTML = '<p class="text-xl animate-pulse">กำลังคิด...</p>';
+        chatBox.appendChild(loadingBubble);
+        chatBox.scrollTop = chatBox.scrollHeight;
+        const aiResponse = await callGemini(text);
+        document.getElementById(loadingId).remove();
+        appendMessage('ai', aiResponse);
+    }
+
+    function appendMessage(role, text) {
+        const bubble = document.createElement('div');
+        bubble.className = role === 'user' 
+            ? 'bg-slate-800 p-6 rounded-[2rem] max-w-[85%] ml-auto border border-slate-700 shadow-xl' 
+            : 'ai-bubble p-6 rounded-[2rem] max-w-[85%] shadow-xl text-white';
+        bubble.innerHTML = `<p class="text-xl leading-relaxed">${text.replace(/\n/g, '<br>')}</p>`;
+        chatBox.appendChild(bubble);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function askAI(question) {
+        aiInput.value = question;
+        handleAISubmit();
+    }
+
+    sendBtn.addEventListener('click', handleAISubmit);
+    aiInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleAISubmit(); });
+</script>
+
+</body>
+</html>
