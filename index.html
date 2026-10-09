@@ -1,440 +1,241 @@
-<!DOCTYPE html>
-<html lang="th" class="scroll-smooth">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MBOX ECHO PRO - Official Manual (Offline & MPad Ready)</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>คู่มือ MBOX ECHO PRO</title>
+<meta name="description" content="คู่มือการใช้งานเครื่องคาราโอเกะ MBOX ECHO PRO: ติดตั้ง เปิดเครื่อง ปุ่มลัดคีย์บอร์ด แอป MPAD2 อัปเดตคอนเทนต์ และการรับประกัน">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 <style>
-    :root {
-        --neon-blue: #3b82f6;
-        --neon-cyan: #22d3ee;
-        --neon-pink: #f472b6;
-    }
-    body {
-        font-family: 'Noto Sans Thai', sans-serif;
-        background: radial-gradient(circle at top right, #0f172a, #000000, #020617);
-        color: #f1f5f9;
-        overflow-x: hidden;
-        font-size: 1.25rem; 
-    }
-    .glass-card {
-        background: rgba(15, 23, 42, 0.75);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(59, 130, 246, 0.25);
-        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
-    }
-    .neon-border { border: 1px solid rgba(34, 211, 238, 0.5); box-shadow: 0 0 25px rgba(34, 211, 238, 0.2); }
-    .keyboard-key {
-        display: inline-block;
-        background: #1e293b;
-        border: 1px solid #475569;
-        border-bottom-width: 5px;
-        border-radius: 10px;
-        padding: 6px 16px;
-        font-family: monospace;
-        font-weight: 800;
-        color: var(--neon-cyan);
-        text-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
-    }
-    .step-node {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        background: var(--neon-blue);
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 800;
-        font-size: 1.8rem;
-        box-shadow: 0 0 20px var(--neon-blue);
-    }
+:root{--blue:#1D60E5;--pu:#7145FE;--mg:#D93AD1;--ink:#131313;--txt:#2a2a2e;--mute:#6b6b76;--line:#e7e7ef;--soft:#f5f4ff;--bg:#ffffff;--card:#ffffff;--warn:#fff4e5;--warnb:#ffd29a;--tip:#eef4ff;--tipb:#c7d8ff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#f3f3f7;--txt:#d9d9e3;--mute:#a0a0b0;--line:#2c2c38;--soft:#1c1a2e;--bg:#0f0f14;--card:#17171f;--warn:#2b2113;--warnb:#6b4a1c;--tip:#141c33;--tipb:#2c3f73}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:'Kanit','Poppins',sans-serif;font-weight:300;background:var(--bg);color:var(--txt);line-height:1.7;font-size:17px}
+b,strong{font-weight:500;color:var(--ink)}
+a{color:var(--blue)}
+.bar{height:6px;background:linear-gradient(90deg,var(--blue),var(--pu),var(--mg))}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .in{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:10px 20px;overflow-x:auto;scrollbar-width:none}
+nav .in::-webkit-scrollbar{display:none}
+nav .brand{font-family:Poppins;font-weight:700;letter-spacing:.5px;color:var(--ink);white-space:nowrap;text-decoration:none}
+nav a.l{white-space:nowrap;text-decoration:none;color:var(--mute);font-size:15px;font-weight:400;padding:4px 10px;border-radius:999px}
+nav a.l:hover{background:var(--soft);color:var(--pu)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.hero{padding:56px 0 36px;display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:center}
+.hero .tag{font-family:Poppins;font-weight:700;font-size:13px;letter-spacing:4px;background:linear-gradient(90deg,var(--blue),var(--pu),var(--mg));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1{font-size:46px;line-height:1.15;font-weight:600;color:var(--ink);margin:8px 0 14px}
+.hero h1 span{background:linear-gradient(90deg,var(--blue),var(--pu));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:19px;color:var(--mute)}
+.hero .art{background:linear-gradient(135deg,var(--blue),var(--pu) 60%,var(--mg));border-radius:28px;aspect-ratio:1.2;display:flex;align-items:center;justify-content:center;padding:24px;color:#fff;text-align:center}
+.hero .art img{max-width:100%;filter:drop-shadow(0 18px 30px rgba(0,0,0,.35))}
+.hero .art .big{font-family:Poppins;font-weight:700;font-size:44px;line-height:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{font-size:14px;padding:4px 12px;border-radius:999px;background:var(--soft);color:var(--pu);font-weight:400}
+section{padding:40px 0;border-top:1px solid var(--line)}
+section h2{font-size:30px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:14px;margin-bottom:6px}
+section h2 .n{font-family:Poppins;font-weight:700;font-size:16px;color:#fff;background:linear-gradient(135deg,var(--blue),var(--pu));border-radius:10px;min-width:38px;height:38px;display:inline-flex;align-items:center;justify-content:center}
+section .lead{color:var(--mute);margin-bottom:22px}
+h3{font-size:21px;font-weight:500;color:var(--ink);margin:26px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+.card h4{font-weight:500;color:var(--ink);font-size:18px;margin-bottom:6px}
+ol.steps{list-style:none;counter-reset:s;display:grid;gap:12px}
+ol.steps li{counter-increment:s;position:relative;padding-left:58px !important;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+ol.steps li:before{content:counter(s);font-family:Poppins;font-weight:700;font-size:15px;color:#fff;background:linear-gradient(135deg,var(--blue),var(--pu));border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;position:absolute;left:16px;top:15px}
+ul.dots{padding-left:22px;display:grid;gap:4px}
+table{width:100%;border-collapse:collapse;font-size:16px;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--soft);color:var(--pu);font-weight:500}
+tr:last-child td{border-bottom:0}
+.tw{overflow-x:auto}
+kbd{display:inline-block;line-height:1.5;font-family:Poppins;font-weight:600;font-size:14px;background:var(--ink);color:var(--bg);border-radius:6px;padding:1px 8px;white-space:nowrap}
+.call{border-radius:14px;padding:14px 18px;margin:16px 0;border:1px solid}
+.call.tip{background:var(--tip);border-color:var(--tipb)}
+.call.warn{background:var(--warn);border-color:var(--warnb)}
+.call b:first-child{margin-right:4px}
+figure{margin:18px 0}
+figure img{width:100%;border-radius:16px;border:1px solid var(--line);display:block}
+figcaption{font-size:14px;color:var(--mute);margin-top:6px;text-align:center}
+.qr{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.qr img{width:170px;height:170px;background:#fff;padding:10px;border-radius:16px;border:1px solid var(--line)}
+footer{padding:40px 0 60px;border-top:1px solid var(--line);color:var(--mute);font-size:15px}
+footer .row{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center}
+footer img{height:28px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) footer img,:root:not([data-theme="light"]) nav img{filter:invert(1)}}
+.btn{display:inline-block;padding:10px 18px;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--pu));color:#fff;text-decoration:none;font-weight:400}
+@media (max-width:760px){body{font-size:16px}.hero{grid-template-columns:1fr;padding-top:32px}.hero h1{font-size:34px}section h2{font-size:24px}}
+</style></head><body>
+<div class="bar"></div><nav><div class="in"><a class="brand" href="#top">MBOX ECHO PRO</a><a class="l" href="#about">รู้จักเครื่อง</a><a class="l" href="#install">ติดตั้ง</a><a class="l" href="#start">เปิดเครื่อง</a><a class="l" href="#control">คีย์บอร์ด</a><a class="l" href="#songs">ค้นหา/คิว</a><a class="l" href="#app">MPAD2</a><a class="l" href="#settings">ตั้งค่า</a><a class="l" href="#update">อัปเดต</a><a class="l" href="#help">แก้ปัญหา</a><a class="l" href="#warranty">ประกัน</a></div></nav>
+<div class="wrap" id="top"><div class="hero">
+<div><div class="tag">USER MANUAL</div><h1>คู่มือใช้งาน<br><span>MBOX ECHO PRO</span></h1>
+<p>เครื่องคาราโอเกะระบบ Hybrid ฮาร์ดดิสก์ 4TB ในตัว เล่นคอนเทนต์ได้แม้อินเทอร์เน็ตล่ม และอัปเดตคอนเทนต์ใหม่ผ่านออนไลน์</p>
+<div class="chips"><span class="chip">Hybrid · 4TB</span><span class="chip">150,000+ รายการ</span><span class="chip">ภาพสูงสุด 4K</span><span class="chip">MPAD2</span></div></div>
+<div class="art"><div><img src="mbox-logo-white.png" alt="MBOX" style="height:46px;filter:none"><div class="big" style="margin-top:18px">ECHO PRO</div><div style="opacity:.85;margin-top:8px">Hybrid Karaoke System</div></div></div>
+</div></div>
 
-    .ai-bubble {
-        background: rgba(59, 130, 246, 0.2);
-        border-left: 5px solid var(--neon-blue);
-        animation: slideIn 0.3s ease-out;
-    }
-    @keyframes slideIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    .custom-scrollbar::-webkit-scrollbar { width: 8px; }
-    .custom-scrollbar::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
-    .custom-scrollbar::-webkit-scrollbar-thumb { background: var(--neon-blue); border-radius: 10px; }
-</style>
-</head>
-<body class="antialiased selection:bg-cyan-500 selection:text-slate-900">
+<section id="about"><div class="wrap">
+<h2><span class="n">01</span>รู้จัก ECHO PRO</h2>
+<p class="lead">เหมาะกับพูลวิลล่า โรงแรม Entertainment Complex ห้องสัมมนา และร้านที่ให้ความสำคัญกับความเสถียร — ซื้อครั้งเดียวใช้ยาว</p>
+<div class="grid">
+<div class="card"><h4>🎤 คอนเทนต์</h4><p>ภาษาไทย อังกฤษ จีน จีนอ่านไทย เกาหลี และญี่ปุ่น รองรับมากกว่า 150,000 รายการ</p></div>
+<div class="card"><h4>✨ ฟีเจอร์</h4><p>แอป MPAD2 สั่งจากมือถือ · Smart Search · จัดคิว/สร้าง Playlist · CAST ไร้สาย · ให้คะแนนหลังร้องจบ · ปรับเสียง 3 โหมด · ดู Netflix / YouTube</p></div>
+<div class="card"><h4>📶 อินเทอร์เน็ต</h4><p>เล่นจากฮาร์ดดิสก์ในเครื่อง เน็ตล่มก็ใช้ได้ ต่อเน็ตเพื่ออัปเดตคอนเทนต์ (แนะนำ 1000/1000 Mbps)</p></div>
+</div>
+<h3>สเปกเครื่อง</h3>
+<div class="tw"><table>
+<tr><th>ขนาด</th><td>24 × 18.5 × 8 ซม.</td></tr><tr><th>น้ำหนัก</th><td>4 กก.</td></tr>
+<tr><th>ความละเอียดสูงสุด</th><td>4K</td></tr>
+<tr><th>ช่องต่อ</th><td>HDMI ×2, USB ×2, LAN ×1, WiFi, VGA ×1, AUX ×1, Audio Stereo และ Power</td></tr></table></div>
+<h3>อุปกรณ์ในกล่อง</h3>
+<div class="tw"><table><tr><th>รายการ</th></tr>
+<tr><td>ตัวเครื่อง ECHO PRO</td></tr><tr><td>Power Adapter 12V 5A</td></tr><tr><td>สาย HDMI</td></tr><tr><td>สาย RCA</td></tr>
+<tr><td>Wireless Keyboard (ภาษาไทย / อังกฤษ)</td></tr><tr><td>สาย USB สีฟ้า สำหรับต่อตัวรับสัญญาณคีย์บอร์ด</td></tr><tr><td>เสาอากาศ WiFi</td></tr></table></div>
+</div></section>
 
-<nav class="fixed top-0 w-full z-50 glass-card border-b border-blue-900/40 py-5 px-8">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <div class="font-black text-3xl tracking-tighter uppercase italic">MBOX <span class="text-blue-500">ECHO PRO</span></div>
-        <div class="hidden lg:flex space-x-10 text-sm font-bold uppercase tracking-[0.2em]">
-            <a href="#setup" class="hover:text-cyan-400 transition-all">Setup</a>
-            <a href="#quickstart" class="hover:text-cyan-400 transition-all">Quick Start</a>
-            <a href="#mpad" class="hover:text-cyan-400 transition-all">MPad2</a>
-            <a href="#shortcuts" class="hover:text-cyan-400 transition-all">Shortcuts</a>
-            <a href="#contact" class="hover:text-cyan-400 transition-all text-pink-400">Licensing</a>
-        </div>
-    </div>
-</nav>
+<section id="install"><div class="wrap">
+<h2><span class="n">02</span>ติดตั้งและต่อสาย</h2>
+<p class="lead">ต่อสายทุกเส้นให้เรียบร้อยก่อน แล้ว <b>เสียบปลั๊กไฟเป็นขั้นตอนสุดท้ายเสมอ</b></p>
+<ol class="steps">
+<li><div><b>ภาพ (HDMI)</b> — ต่อสาย HDMI จากเครื่องไปที่ทีวี ใช้ช่องไหนก็ได้: <b>ช่องซ้าย</b> ส่งออกทั้งภาพและเสียง · <b>ช่องขวา</b> ส่งออกเฉพาะภาพ</div></li>
+<li><div><b>เสียง</b> — ต่อสาย RCA จากช่อง <b>Audio Stereo</b> ของเครื่อง เข้าแอมป์หรือมิกเซอร์</div></li>
+<li><div><b>เสาอากาศ WiFi</b> — ติดเสาอากาศ (แถมในกล่อง) ที่ด้านหลังเครื่อง เพื่อให้มือถือ/แท็บเล็ตเชื่อมต่อกับเครื่องได้</div></li>
+<li><div><b>คีย์บอร์ด</b> — เสียบตัวรับสัญญาณ Wireless Keyboard เข้ากับ <b>สาย USB สีฟ้า</b> แล้วต่อเข้าช่อง USB ช่องไหนก็ได้ของเครื่อง</div></li>
+<li><div><b>อินเทอร์เน็ต</b> — ต่อสาย LAN หรือ WiFi (สำหรับอัปเดตคอนเทนต์ และเชื่อมแอป MPAD2)</div></li>
+<li><div><b>ไฟ</b> — เสียบ Power Adapter 12V 5A เป็นขั้นตอนสุดท้าย</div></li></ol>
+<div class="call tip"><b>🧰</b> ติดตั้งเองได้ หรือให้ทีม MBOX ติดตั้งให้ ค่าบริการติดตั้งครั้งละ 3,000 บาท</div>
 
-<header class="pt-48 pb-24 px-8 relative overflow-hidden flex flex-col items-center justify-center min-h-screen">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-blue-600/10 rounded-full blur-[150px] -z-10"></div>
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-        <div class="space-y-10 order-2 lg:order-1 text-center lg:text-left">
-            <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-blue-900/30 border border-blue-500/30 text-cyan-400 text-sm font-bold uppercase tracking-[0.3em]">
-                Smart Intelligent Entertainment Solution
-            </div>
-            <h1 class="text-7xl md:text-8xl font-black leading-[1] tracking-tighter text-white uppercase">
-                MBOX <span class="text-blue-500">ECHO PRO</span>
-            </h1>
-            <p class="text-2xl text-slate-400 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                ระบบคาราโอเกะความจุสูงระดับโปร <br> <span class="text-white font-bold underline decoration-blue-500">พร้อมใช้งานแบบ Offline 100%</span>
-            </p>
-            <div class="flex flex-wrap gap-6 justify-center lg:justify-start">
-                <a href="#setup" class="px-12 py-5 bg-blue-600 hover:bg-blue-500 transition-all text-white font-bold rounded-2xl shadow-[0_0_40px_rgba(37,99,235,0.4)] text-2xl">
-                    เริ่มต่อเครื่อง
-                </a>
-            </div>
-        </div>
-        <div class="order-1 lg:order-2 relative flex justify-center">
-            <div class="relative group">
-                <div class="absolute -inset-2 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-[4rem] blur opacity-40 group-hover:opacity-70 transition duration-1000"></div>
-                <div class="relative p-10 glass-card rounded-[4rem] neon-border">
-                    <img src="mini-spark.png" alt="MBOX ECHO PRO" class="w-full max-w-md h-auto transform transition duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/600x400/1e293b/38bdf8?text=MBOX+ECHO+PRO'">
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+<h3>ความปลอดภัยทางไฟฟ้า</h3>
+<div class="grid">
+ <div class="card"><h4>⚡ ตรวจสายดินก่อนติดตั้ง</h4><p>ก่อนติดตั้งครั้งแรก ให้ช่างไฟตรวจระบบสายดินของร้าน วัดแรงดันระหว่างสายดินกับนิวทรัลควรใกล้ 0 โวลต์ และตรวจว่าเต้ารับที่ใช้มีสายดินต่อลงดินจริง</p></div>
+ <div class="card"><h4>🔌 เสียบไฟให้ถูกวิธี</h4><p>เสียบเครื่อง MBOX ทีวี แอมป์ และมิกเซอร์ที่รางปลั๊กเดียวกันในวงจรไฟเดียวกัน ใช้รางปลั๊กกันไฟกระชาก (Surge Protector) เปลี่ยนทุก 2–3 ปี ห้ามต่อรางปลั๊กพ่วงกันหลายชั้น</p></div>
+ <div class="card"><h4>📺 สาย HDMI</h4><p>ปิดเครื่องและปิดทีวีทุกครั้งก่อนเสียบหรือถอดสาย HDMI</p></div>
+ <div class="card"><h4>🛠️ เมื่อมีงานไฟฟ้าในร้าน</h4><p>ก่อนช่างเริ่มงาน (เดินสายไฟ เปลี่ยนเบรกเกอร์ ตัดไฟทั้งร้าน) ให้ถอดปลั๊กชุดคาราโอเกะทั้งหมด และถอดสาย HDMI ระหว่างเครื่องกับทีวี เสียบกลับเมื่อไฟจ่ายนิ่งแล้ว</p></div>
+</div>
+</div></section>
 
-<main class="max-w-7xl mx-auto px-8 space-y-48 pb-48">
+<section id="start"><div class="wrap">
+<h2><span class="n">03</span>เปิดเครื่องครั้งแรก</h2>
+<p class="lead">ลำดับเปิด: <b>เปิดทีวีก่อน</b> แล้วค่อยเปิดเครื่อง MBOX · ลำดับปิด: <b>ปิด MBOX ก่อน</b> แล้วค่อยปิดทีวี</p>
+<h3>เปิดใช้งานเครื่อง (Activation)</h3>
+<ol class="steps">
+<li>เปิดเครื่อง แล้วใช้แอป <b>LINE</b> สแกน QR Code บนจอ</li>
+<li>กด <b>Allow</b> สิทธิ์ต่างๆ จะขึ้น Pop up เปิดใช้งาน ให้สไลด์ปุ่มเพื่อเปิด</li>
+<li><b>ถ้าเครื่องต่อเน็ต</b> — รหัสจะส่งไปที่ทีวีอัตโนมัติ<br><b>ถ้าเครื่องไม่ต่อเน็ต</b> — รหัสจะเด้งขึ้นบน Pop up ในมือถือ ให้พิมพ์รหัสนั้นผ่านคีย์บอร์ด</li></ol>
+</div></section>
 
-    <!-- Section 1: Hardware Setup -->
-    <section id="setup" class="scroll-mt-32">
-        <div class="mb-16 text-center max-w-4xl mx-auto">
-            <h2 class="text-5xl font-bold text-white mb-8 uppercase tracking-tight border-b-4 border-blue-500 inline-block pb-2">1. การติดตั้งฮาร์ดแวร์ (Hardware Setup)</h2>
-            <p class="text-2xl text-slate-400 leading-relaxed">ประกอบง่าย เชื่อมต่อเสถียร พร้อมร้องทันที</p>
-        </div>
+<section id="control"><div class="wrap">
+<h2><span class="n">04</span>ใช้งานด้วยคีย์บอร์ด</h2>
+<p class="lead">หน้าคาราโอเกะใช้ <b>ปุ่มบนคีย์บอร์ดเป็นหลัก</b> ไม่ต้องใช้เมาส์หรือทัชแพด (เมาส์/ทัชแพดใช้สำหรับแอป YouTube)</p>
+<h3>เลือกแอปจากหน้า Home</h3>
+<ol class="steps"><li>ที่หน้า Home กดลูกศร <kbd>←</kbd> <kbd>→</kbd> ตัวเลือกจะหมุนไปตามที่กด</li><li>เมื่อถึงแอปที่ต้องการ กด <kbd>Enter</kbd> เพื่อเข้าแอป</li></ol>
+<h3>ปุ่มลัดคีย์บอร์ด</h3>
+<figure><img src="keyboard-shortcut.png" alt="ปุ่มลัดคีย์บอร์ด MBOX สำหรับคาราโอเกะ" loading="lazy"><figcaption>ปุ่มสีน้ำเงิน–ม่วง คือปุ่มที่ใช้ในหน้าคาราโอเกะ</figcaption></figure>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div class="glass-card p-12 rounded-[3rem] border-t-8 border-blue-500 space-y-6">
-                <div class="step-node">01</div>
-                <h4 class="text-3xl font-bold text-white uppercase">Connectivity</h4>
-                <p class="text-xl text-slate-400 leading-relaxed">
-                    นำ **เสา Wi-Fi** มาต่อเข้าหลังเครื่องเพื่อรับสัญญาณสำหรับ Tablet และเสียบสาย **RCA (แดง-ขาว)** เข้าเครื่องเสียง
-                </p>
-            </div>
-            <div class="glass-card p-12 rounded-[3rem] border-t-8 border-pink-500 space-y-6">
-                <div class="step-node bg-pink-500 shadow-pink-500">02</div>
-                <h4 class="text-3xl font-bold text-white uppercase">Control</h4>
-                <p class="text-xl text-slate-400 leading-relaxed">
-                    เสียบตัวรับสัญญาณคีย์บอร์ดผ่าน **สาย USB สีฟ้า** พ่วงออกมารับสัญญาณด้านนอกเพื่อความเสถียรสูงสุด
-                </p>
-            </div>
-            <div class="glass-card p-12 rounded-[3rem] border-t-8 border-cyan-500 space-y-6">
-                <div class="step-node bg-cyan-500 shadow-cyan-500">03</div>
-                <h4 class="text-3xl font-bold text-white uppercase">Plug & Play</h4>
-                <p class="text-xl text-slate-400 leading-relaxed">
-                    ต่อสาย **HDMI** และ **Adapter** ให้เรียบร้อย จากนั้นเปิดสวิตช์เครื่องเพื่อเริ่มความสนุกได้ทันที
-                </p>
-            </div>
-        </div>
-    </section>
+<div class="tw"><table>
+<tr><th>ปุ่ม</th><th>หน้าที่</th><th>ปุ่ม</th><th>หน้าที่</th></tr>
+<tr><td><kbd>ESC</kbd></td><td>ย้อนกลับ</td><td><kbd>F7</kbd></td><td>เล่น / หยุดเพลง</td></tr>
+<tr><td><kbd>F1</kbd></td><td>วิธีใช้งาน + QR เชื่อมแอปมือถือ</td><td><kbd>F8</kbd></td><td>สลับโหมดเสียง คาราโอเกะ / สเตอริโอ / เสียงร้อง</td></tr>
+<tr><td><kbd>F2</kbd></td><td>สร้าง Playlist / Folder เพลงโปรด</td><td><kbd>F9</kbd></td><td>เล่นแบบจรวด — เล่นทันที แทรกหน้าทุกเพลงในคิว</td></tr>
+<tr><td><kbd>F3</kbd></td><td>เพิ่มเพลงที่เลือกเข้า Playlist</td><td><kbd>F10</kbd></td><td>ข้ามเพลง (หยุด แล้วเล่นเพลงถัดไป)</td></tr>
+<tr><td><kbd>F4</kbd></td><td>– (ไม่มีฟังก์ชัน)</td><td><kbd>F11</kbd></td><td>หยุด แล้วเล่นเพลงเดิม หรือเพลงถัดไป</td></tr>
+<tr><td><kbd>F5</kbd> / <kbd>F6</kbd></td><td>ลดเสียง / เพิ่มเสียง</td><td><kbd>F12</kbd></td><td>ซ่อนหน้าจอ</td></tr>
+<tr><td><kbd>Tab</kbd></td><td>สลับหน้าค้นหา ⇄ หน้าคิว</td><td><kbd>Del</kbd></td><td>ลบเพลงออกจากคิว</td></tr>
+<tr><td><kbd>Enter</kbd></td><td>เลือก</td><td><kbd>Shift</kbd>+<kbd>Enter</kbd></td><td>เลือกทุกเพลงในเพลงโปรด</td></tr>
+<tr><td><kbd>← →</kbd></td><td>เลือกหมวดภาษา / หมวดเพลงโปรด</td><td><kbd>EN</kbd></td><td>สลับภาษาพิมพ์ ไทย / อังกฤษ</td></tr>
+</table></div>
+</div></section>
 
-    <!-- Section 2: Quick Start -->
-    <section id="quickstart" class="scroll-mt-32">
-        <div class="mb-16 max-w-4xl">
-            <h2 class="text-5xl font-bold text-white mb-8 uppercase tracking-tight border-l-[12px] border-blue-600 pl-8">2. การเปิดใช้งานครั้งแรก (Quick Start)</h2>
-            <p class="text-2xl text-slate-400">ระบบพร้อมทำงานในรูปแบบ Offline 100%</p>
-        </div>
+<section id="songs"><div class="wrap">
+<h2><span class="n">05</span>ค้นหา · จัดคิว · Playlist</h2>
+<p class="lead">ทำได้ทั้งจากคีย์บอร์ดและแอป MPAD2 บนมือถือ</p>
+<h3>ค้นหาเพลงด้วย Smart Search</h3>
+<p>พิมพ์ได้ทั้ง <b>ชื่อเพลง ชื่อศิลปิน และรหัสเพลง</b> ในช่องค้นหาเดียวกัน — กด <kbd>Tab</kbd> เพื่อสลับไปโหมดค้นหา พิมพ์ แล้วกด <kbd>Enter</kbd> เพื่อเลือก</p>
+<div class="call tip"><b>💡</b> พิมพ์ภาษาไทยไม่ได้? กดปุ่ม <kbd>EN</kbd> (ซ้ายของเลข 1) เพื่อสลับภาษา และใช้ปุ่มคีย์บอร์ดเท่านั้น — การใช้ทัชแพดหรือเมาส์กดพิมพ์เป็นสาเหตุหลักที่เปลี่ยนภาษาไม่ได้</div>
+<h3>จัดคิวเพลง (สลับลำดับ / ลบ)</h3>
+<div class="grid">
+<div class="card"><h4>⌨️ จากคีย์บอร์ด</h4><ol class="steps">
+<li>กด <kbd>Tab</kbd> ให้แถบสีเหลืองย้ายไปที่รายการคิวด้านขวา</li>
+<li>กด <kbd>↑</kbd> <kbd>↓</kbd> ไปที่เพลงที่ต้องการ</li>
+<li>กด <kbd>Del</kbd> เพื่อลบ — หรือกด <kbd>Enter</kbd> เลือก แล้วกด <kbd>↑</kbd> <kbd>↓</kbd> เพื่อย้ายลำดับ</li>
+<li>กด <kbd>Enter</kbd> ยืนยัน (หรือกด <kbd>F9</kbd> เพื่อเล่นเพลงนั้นทันที)</li></ol></div>
+<div class="card"><h4>📱 จากแอป MPAD2</h4><ol class="steps">
+<li>ที่หน้าแรกของแอป กดปุ่ม ☰ (ขีด 3 ขีด) มุมขวาบน</li>
+<li>เลือก <b>รายการคิวเพลง</b></li>
+<li>กดค้างที่เพลง แล้วปัดซ้าย/ขวาเพื่อลบ หรือลากขึ้น-ลงเพื่อย้ายลำดับ</li></ol></div>
+</div>
+<h3>สร้าง Playlist (เพลงโปรด)</h3>
+<div class="grid">
+<div class="card"><h4>⌨️ สร้างและเพิ่มเพลงจากคีย์บอร์ด</h4><ol class="steps">
+<li>กด <kbd>F2</kbd> สร้าง Playlist แล้วตั้งชื่อ Folder → <kbd>Enter</kbd></li>
+<li>เลือกเพลงที่ชอบ แล้วกด <kbd>F3</kbd></li>
+<li>เลือก Folder ที่ต้องการ → <kbd>Enter</kbd></li></ol></div>
+<div class="card"><h4>📱 เพิ่มจากแอป MPAD2</h4><ol class="steps"><li>กดจุด 3 จุด ⋮ ที่ชื่อเพลง</li><li>เลือก <b>เพิ่มใน Favourite</b></li></ol></div>
+<div class="card"><h4>▶️ เล่นเพลงใน Playlist</h4><ol class="steps">
+<li>กด <kbd>←</kbd> <kbd>→</kbd> เลื่อนไปเรื่อยๆ จนเจอหมวด <b>รายการเพลงโปรด</b></li>
+<li>กด <kbd>↑</kbd> <kbd>↓</kbd> เลือก Folder</li>
+<li>เลือกเพลงที่ต้องการ หรือกด <kbd>Shift</kbd>+<kbd>Enter</kbd> เพื่อเลือกทุกเพลง</li></ol></div>
+</div>
+<h3>ปรับเสียง 3 โหมด</h3>
+<p>กด <kbd>F8</kbd> เพื่อสลับโหมด <b>คาราโอเกะ / สเตอริโอ / เสียงร้อง</b> ได้ทันที</p>
+</div></section>
 
-        <div class="glass-card p-16 rounded-[4rem] overflow-hidden relative">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                <div class="space-y-12">
-                    <div class="flex gap-8 items-start">
-                        <span class="text-7xl">⚡</span>
-                        <div>
-                            <h4 class="text-3xl font-bold text-white mb-3">Instant Access</h4>
-                            <p class="text-xl text-slate-400 leading-relaxed">
-                                รุ่น ECHO PRO มีความจุมาให้พร้อมในเครื่อง <span class="text-cyan-400 font-bold underline">ไม่จำเป็นต้องต่ออินเทอร์เน็ต</span> ในครั้งแรก สามารถใช้งานได้ทันทีที่เปิดเครื่อง
-                            </p>
-                        </div>
-                    </div>
-                    <div class="flex gap-8 items-start">
-                        <span class="text-7xl">📦</span>
-                        <div>
-                            <h4 class="text-3xl font-bold text-white mb-3">Internal Storage</h4>
-                            <p class="text-xl text-slate-400 leading-relaxed">
-                                มั่นใจด้วยความจุที่รองรับรายการเพลงทั้งหมดแบบออฟไลน์ เสถียรที่สุดสำหรับสถานประกอบการ
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-blue-900/25 p-12 rounded-[3rem] border border-blue-500/40 text-center">
-                    <h5 class="text-blue-300 font-black text-2xl uppercase tracking-widest mb-4">Offline Advantage</h5>
-                    <p class="text-xl text-slate-300 leading-relaxed italic">
-                        "บริการลูกค้าได้อย่างต่อเนื่อง ไร้กังวลแม้เกิดปัญหาเครือข่ายอินเทอร์เน็ตล่ม"
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="app"><div class="wrap">
+<h2><span class="n">06</span>ควบคุมผ่านมือถือด้วย MPAD2</h2>
+<p class="lead">MPAD2 ดาวน์โหลดฟรีทั้ง iOS และ Android ใช้ได้กับเครื่อง MBOX ทุกรุ่น</p>
+<div class="qr"><img src="QR-mpad.jpg" alt="QR ดาวน์โหลดแอป MPAD2"><div><b>สแกนเพื่อดาวน์โหลดแอป MPAD2</b><br>หรือค้นหา “Mpad2” ใน App Store / Google Play</div></div>
+<h3>เชื่อมต่อแอปกับเครื่อง</h3>
+<ol class="steps">
+<li>ต่อมือถือเข้าเครือข่ายตามตารางด้านล่าง</li>
+<li>เข้าเมนู Karaoke บนเครื่อง แล้วกด <kbd>F1</kbd> (วิธีการใช้งาน / เชื่อมต่อ) จอจะแสดง QR Code</li>
+<li>เปิดแอป MPAD2 แล้วสแกน <b>QR ฝั่งขวามือ</b></li>
+<li>เชื่อมต่อเสร็จ เลือกเพลง ปรับเสียง หยุด เล่น หรือข้ามเพลงจากมือถือได้ทันที</li></ol>
+<h3>มือถือต้องต่อเน็ตแบบไหน</h3>
+<div class="tw"><table><tr><th>เครื่องต่ออินเทอร์เน็ตแบบ</th><th>มือถือต้องต่อ</th></tr><tr><td>WiFi</td><td>WiFi วงเดียวกับเครื่อง</td></tr><tr><td>สาย LAN</td><td>WiFi ที่เครื่องปล่อยสัญญาณออกมา</td></tr><tr><td>ไม่ต่ออินเทอร์เน็ต</td><td>WiFi ที่เครื่องปล่อยสัญญาณออกมา (ใช้งานได้แม้ไม่มีเน็ต)</td></tr></table></div>
 
-    <!-- Section 3: MPad2 Connection Session (Requested Section) -->
-    <section id="mpad" class="scroll-mt-32">
-        <div class="mb-16 text-center max-w-4xl mx-auto">
-            <h2 class="text-5xl font-bold text-white mb-8 uppercase tracking-tight border-b-4 border-pink-500 inline-block pb-2">3. การเชื่อมต่อผ่านแอป MPad2</h2>
-            <p class="text-2xl text-slate-400 leading-relaxed">เปลี่ยน Smartphone หรือ Tablet เป็นรีโมทอัจฉริยะ</p>
-        </div>
+</div></section>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div class="glass-card p-12 rounded-[3rem] space-y-10">
-                <div class="flex gap-8 items-start">
-                    <div class="w-12 h-12 rounded-full bg-pink-500 flex items-center justify-center font-bold text-2xl flex-shrink-0">1</div>
-                    <div>
-                        <h4 class="text-2xl font-bold text-white mb-2">ดาวน์โหลดแอปพลิเคชัน</h4>
-                        <p class="text-lg text-slate-400 leading-relaxed">ค้นหาแอป **"Mpad2"** ใน App Store (iOS) หรือ Google Play Store (Android) และดำเนินการติดตั้งลงบนมือถือหรือแท็บเล็ต</p>
-                    </div>
-                </div>
-                <div class="flex gap-8 items-start">
-                    <div class="w-12 h-12 rounded-full bg-pink-500 flex items-center justify-center font-bold text-2xl flex-shrink-0">2</div>
-                    <div>
-                        <h4 class="text-2xl font-bold text-white mb-2">เรียก QR Code บนจอ TV</h4>
-                        <p class="text-lg text-slate-400 leading-relaxed">กดปุ่ม <span class="keyboard-key text-sm">F1</span> บนคีย์บอร์ดที่ต่อกับเครื่อง MBOX เพื่อแสดงหน้าต่างวิธีการใช้งานและ QR Code สำหรับเชื่อมต่อที่หน้าจอทีวี</p>
-                    </div>
-                </div>
-                <div class="flex gap-8 items-start">
-                    <div class="w-12 h-12 rounded-full bg-pink-500 flex items-center justify-center font-bold text-2xl flex-shrink-0">3</div>
-                    <div>
-                        <h4 class="text-2xl font-bold text-white mb-2">แสกนเพื่อเชื่อมต่อ</h4>
-                        <p class="text-lg text-slate-400 leading-relaxed">เปิดแอป Mpad2 ในมือถือ เลือกฟังก์ชัน **แสกน** และเล็งกล้องไปที่ QR Code บนจอทีวี ข้อมูลคิวเพลงจะซิงค์กันทันที</p>
-                    </div>
-                </div>
-            </div>
+<section id="settings"><div class="wrap">
+<h2><span class="n">07</span>แอปอื่น และการตั้งค่า</h2>
+<h3>YouTube / Netflix / แอปอื่น</h3>
+<p>หน้า Home มีเมนู YouTube และ Netflix ให้ใช้งาน และเพิ่มแอปอื่นได้ผ่านเมนู <b>MyApps</b> (แอป YouTube ใช้เมาส์/ทัชแพดได้)</p>
+<h3>เปิด-ปิดการแสดงค่ายเพลง</h3>
+<p>เลือกแสดงเฉพาะค่ายที่ร้านมีสิทธิ์ใช้งาน — เป็นการยืนยันการเปิดใช้สิทธิ์ค่ายเพลงด้วยตัวเอง</p>
+<ol class="steps"><li>เข้า <b>Setup Karaoke → จัดการข้อมูล → ค่ายเพลง</b></li><li>เลื่อนเลือกค่าย กด <kbd>Enter</kbd> เพื่อติ๊กเปิด หรือเอาเครื่องหมายออกเพื่อซ่อนค่ายที่ร้านไม่ได้ซื้อลิขสิทธิ์</li><li>ออกจากเมนู แล้วกด <b>ตกลง</b></li></ol>
+</div></section>
 
-            <div class="glass-card p-12 rounded-[3rem] flex flex-col items-center justify-center bg-gradient-to-br from-pink-900/20 to-transparent relative overflow-hidden">
-                <div class="absolute -top-10 -right-10 w-40 h-40 bg-pink-500/10 rounded-full blur-3xl"></div>
-                <div class="p-8 bg-white rounded-3xl shadow-[0_0_50px_rgba(244,114,182,0.3)] mb-8 transform hover:scale-105 transition-transform">
-                    <!-- Placeholder for QR-mpad.jpg -->
-                    <img src="QR-mpad.jpg" alt="Download Mpad2" class="w-64 h-64 object-contain" onerror="this.src='https://placehold.co/300x300/ffffff/000000?text=Scan+QR+Code'">
-                </div>
-                <div class="text-center">
-                    <h5 class="text-pink-400 font-black text-xl uppercase tracking-[0.3em] mb-2">Digital Control Hub</h5>
-                    <p class="text-slate-400 italic font-light">"ค้นหาเพลงได้ง่ายๆ จากที่นั่งของคุณเอง"</p>
-                    <div class="mt-4 p-3 bg-red-900/30 border border-red-500/40 rounded-xl text-xs text-red-300">
-                        *หมายเหตุ: มือถือและเครื่อง MBOX ต้องอยู่บน Wi-Fi วงเดียวกัน
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="update"><div class="wrap">
+<h2><span class="n">08</span>อัปเดตคอนเทนต์และค่าบริการ</h2>
+<ol class="steps"><li>เปิดเครื่อง และเชื่อมต่ออินเทอร์เน็ตผ่าน WiFi หรือสาย LAN</li><li>เครื่องจะอัปเดตคอนเทนต์ใหม่ให้อัตโนมัติ — อัปเดตได้ทุกเดือน</li></ol>
+<div class="tw" style="margin-top:16px"><table><tr><th>รายการ</th><th>ค่าบริการ</th></tr>
+<tr><td>อัปเดตออนไลน์ ปีแรก</td><td>ฟรี 12 เดือน</td></tr>
+<tr><td>อัปเดตออนไลน์ ปีถัดไป</td><td>3,000 บาท / เครื่อง / ปี</td></tr>
+<tr><td>ไม่ต่อออนไลน์ — ส่งเครื่องเข้าบริการอัปเดต</td><td>1,000 บาท / ครั้ง</td></tr></table></div>
+<p style="font-size:14px;color:var(--mute);margin-top:6px">ค่าบริการไม่รวม VAT</p>
+<div class="call tip"><b>✅</b> ไม่ต่อ Online Update ก็ยังใช้งานได้ปกติทุกอย่าง เพียงแต่จะไม่ได้รับคอนเทนต์ใหม่เพิ่ม</div>
+</div></section>
 
-    <!-- Section 4: Keyboard Shortcuts -->
-    <section id="shortcuts" class="scroll-mt-32">
-        <div class="mb-16 text-center max-w-4xl mx-auto">
-            <h2 class="text-5xl font-bold text-white mb-8 uppercase tracking-tight underline decoration-cyan-500 decoration-4 underline-offset-8">4. คีย์ลัด Wireless Keyboard (Shortcuts)</h2>
-            <p class="text-2xl text-slate-400 leading-relaxed">ควบคุมการใช้งานทั้งหมดผ่านแผงคีย์บอร์ดเดียว</p>
-        </div>
+<section id="help"><div class="wrap">
+<h2><span class="n">09</span>แก้ปัญหาเบื้องต้น</h2>
+<div class="grid">
+<div class="card"><h4>⌨️ คีย์บอร์ดหน่วง / กดไม่ติด</h4><p>เช็คว่าตัวรับสัญญาณคีย์บอร์ดต่อผ่าน <b>สาย USB สีฟ้า</b> แล้วเสียบเข้าตัวเครื่องแล้วหรือยัง</p></div>
+<div class="card"><h4>🔤 เปลี่ยนภาษาไม่ได้</h4><p>ส่วนใหญ่เกิดจากใช้ทัชแพดหรือเมาส์กดพิมพ์ ให้ใช้ปุ่มคีย์บอร์ดเป็นหลัก และกด <kbd>EN</kbd> (ซ้ายของเลข 1) เพื่อสลับไทย/อังกฤษ</p></div>
+<div class="card"><h4>🐢 เครื่องช้า / ค้าง</h4><p>ติดต่อทีม MBOX ก่อนเสมอ</p></div>
+</div>
+<div class="call warn"><b>⚠️ ห้าม Factory Reset หรือ Format เครื่องเองเด็ดขาด</b> จะลบระบบและคอนเทนต์ทั้งหมด กู้คืนเองไม่ได้ และประกันจะขาดทันที</div>
+</div></section>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div class="glass-card p-12 rounded-[3rem] space-y-8">
-                <h4 class="text-3xl font-black text-blue-400 uppercase border-b border-slate-800 pb-4">Navigation & Basic</h4>
-                <div class="space-y-6 text-xl">
-                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-blue-500 transition-all"><span>ย้อนกลับ / ปิดโปรแกรม</span> <span class="keyboard-key">ESC</span></div>
-                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-blue-500 transition-all"><span>ตรวจสอบการเชื่อมต่อ</span> <span class="keyboard-key">F4</span></div>
-                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-cyan-500 transition-all font-bold text-cyan-400"><span>สลับ ค้นหาเพลง / คิวเพลง</span> <span class="keyboard-key">TAB</span></div>
-                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-blue-500 transition-all"><span>ตกลง / เลือกเพลง</span> <span class="keyboard-key">ENTER</span></div>
-                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-blue-500 transition-all"><span>ซ่อนหน้าจอ</span> <span class="keyboard-key">F12</span></div>
-                </div>
-            </div>
+<section id="warranty"><div class="wrap">
+<h2><span class="n">10</span>การรับประกันและบริการ</h2>
 
-            <div class="glass-card p-12 rounded-[3rem] space-y-8">
-                <h4 class="text-3xl font-black text-pink-500 uppercase border-b border-slate-800 pb-4">Audio & Control</h4>
-                <div class="space-y-6 text-xl">
-                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-pink-500 transition-all"><span>ตัดเสียงร้อง (โหมดเสียง)</span> <span class="keyboard-key">F8</span></div>
-                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-pink-500 transition-all"><span>เล่น / หยุดชั่วคราว</span> <span class="keyboard-key">F7</span></div>
-                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-pink-500 transition-all"><span>ข้ามไปเพลงถัดไป</span> <span class="keyboard-key">F10</span></div>
-                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-pink-500 transition-all font-bold text-pink-400"><span>แทรกคิวเพลง (เล่นด่วน)</span> <span class="keyboard-key uppercase">INSERT</span></div>
-                    <div class="flex justify-between items-center bg-white/5 p-5 rounded-2xl border border-white/5 hover:border-pink-500 transition-all"><span>เพิ่ม / ลดเสียง</span> <span class="keyboard-key">F6 / F5</span></div>
-                </div>
-            </div>
-
-            <div class="lg:col-span-2 glass-card p-12 rounded-[3rem] grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div class="flex justify-between items-center bg-blue-900/20 p-8 rounded-2xl border border-blue-500/30">
-                    <span class="text-2xl font-bold">สร้างรายการเพลงโปรด / เลือก</span>
-                    <span class="keyboard-key">F2 / F3</span>
-                </div>
-                <div class="flex justify-between items-center bg-blue-900/20 p-8 rounded-2xl border border-blue-500/30">
-                    <span class="text-2xl font-bold text-blue-400">เลือกหมวดหมู่ภาษา</span>
-                    <span class="keyboard-key">← / →</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AI ASSISTANT EXPERT ✨ -->
-    <section id="ai-support" class="scroll-mt-32">
-        <div class="mb-16 text-center max-w-4xl mx-auto">
-            <h2 class="text-5xl font-bold text-white mb-8 tracking-tight">✨ AI Technical Support Expert</h2>
-            <p class="text-xl text-slate-400">พิมพ์ถามปัญหาการใช้งานจาก AI อัจฉริยะได้ทันที</p>
-        </div>
-
-        <div class="glass-card p-12 rounded-[4rem] border border-cyan-500/40">
-            <div class="flex flex-col gap-8 h-[550px]">
-                <div id="ai-chat-box" class="flex-1 overflow-y-auto space-y-6 p-8 custom-scrollbar rounded-[2rem] bg-black/40 border border-slate-800">
-                    <div class="ai-bubble p-6 rounded-[2rem] max-w-[85%] shadow-xl">
-                        <p class="text-xl">สวัสดีครับ! ผมคือ AI Expert พร้อมช่วยเหลือเรื่องการใช้งาน MBOX ECHO PRO ครับ คุณติดขัดเรื่องการต่อเครื่อง การใช้แอป หรือต้องการทราบปุ่มลัดส่วนไหน สอบถามได้เลยครับ</p>
-                    </div>
-                </div>
-                
-                <div class="flex flex-wrap gap-4 px-4">
-                    <button onclick="askAI('ต่อ MPad2 ยังไง?')" class="text-sm font-bold bg-slate-800 hover:bg-blue-900 px-5 py-2 rounded-full border border-slate-700 transition-all text-cyan-400">✨ ต่อ MPad2 ยังไง?</button>
-                    <button onclick="askAI('ปุ่มลัดที่ใช้บ่อยมีอะไรบ้าง?')" class="text-sm font-bold bg-slate-800 hover:bg-blue-900 px-5 py-2 rounded-full border border-slate-700 transition-all text-cyan-400">✨ ปุ่มลัดยอดนิยม</button>
-                </div>
-
-                <div class="relative px-2">
-                    <input type="text" id="ai-input" placeholder="พิมพ์คำถามของคุณที่นี่..." class="w-full bg-slate-900 border border-slate-700 rounded-[2rem] py-6 pl-10 pr-24 focus:outline-none focus:border-cyan-500 transition-all text-xl">
-                    <button id="ai-send-btn" class="absolute right-6 top-4 p-3 bg-blue-600 hover:bg-blue-500 rounded-2xl transition-all">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section: Licensing & Contact -->
-    <section id="contact" class="scroll-mt-32">
-        <div class="mb-16 max-w-4xl">
-            <h2 class="text-5xl font-bold text-white mb-8 uppercase tracking-tight border-l-[12px] border-red-600 pl-8">5. ลิขสิทธิ์และการติดต่อ</h2>
-            <p class="text-2xl text-slate-400">การดำเนินธุรกิจอย่างถูกต้องและช่องทาง Support</p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div class="glass-card p-12 rounded-[3rem] border-l-8 border-red-500 bg-red-950/10 space-y-8">
-                <h4 class="text-3xl font-bold text-red-500 flex items-center gap-4"><span>⚖️</span> ลิขสิทธิ์สำหรับร้านอาหาร</h4>
-                <p class="text-2xl text-slate-200 leading-relaxed font-light italic">
-                    "การเปิดเพลงในสถานประกอบการจำเป็นต้องมีใบอนุญาตเผยแพร่ที่ถูกต้อง"
-                </p>
-                <div class="p-6 bg-slate-900/60 rounded-2xl border border-slate-800 text-lg text-slate-300">
-                    MBOX พร้อมดูแลร้านของท่านให้ใช้งานได้อย่างถูกต้อง ไร้กังวลเรื่องกฎหมายลิขสิทธิ์
-                </div>
-            </div>
-            
-            <div class="glass-card p-12 rounded-[3rem] border-l-8 border-green-500 space-y-8">
-                <h4 class="text-3xl font-bold text-green-400 flex items-center gap-4"><span>📞</span> ช่องทางการติดต่อ</h4>
-                <div class="space-y-6">
-                    <a href="https://line.me/ti/p/@mboxkaraoke" target="_blank" class="flex items-center gap-6 p-6 bg-green-900/30 rounded-2xl border border-green-500/50 hover:scale-105 transition-all w-full">
-                        <span class="text-4xl">🟢</span>
-                        <div>
-                            <p class="text-xs uppercase font-bold text-green-400 tracking-widest">Line Official</p>
-                            <p class="text-3xl font-bold">@mboxkaraoke</p>
-                        </div>
-                    </a>
-                    <div class="flex items-center gap-6 p-6 bg-slate-800/40 rounded-2xl border border-slate-700 w-full">
-                        <span class="text-4xl">📱</span>
-                        <div>
-                            <p class="text-xs uppercase font-bold text-slate-400 tracking-widest">Hotline Support</p>
-                            <p class="text-2xl font-bold text-white">086-321-3965 | 086-552-5502</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<footer class="bg-black/90 py-24 px-8 text-center border-t border-slate-900">
-    <div class="max-w-7xl mx-auto opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all mb-12">
-        <img src="MBOX_B.jpg" alt="MBOX Logo" class="h-10 mx-auto" onerror="this.style.display='none'">
-    </div>
-    <p class="text-xs font-black tracking-[0.6em] text-slate-600 uppercase mb-6">MBOX ECHO PRO - High Stability Offline Karaoke</p>
-    <p class="text-sm text-slate-700 uppercase tracking-widest">© 2024 MBOX Multimedia Co., Ltd. สงวนลิขสิทธิ์</p>
-</footer>
-
-<script>
-    const apiKey = "";
-    const systemPrompt = `คุณคือผู้เชี่ยวชาญฝ่ายเทคนิคของ MBOX ECHO PRO 
-    ตอบคำถามโดยอ้างอิงจากข้อมูลเหล่านี้:
-    1. ECHO PRO เล่นแบบ Offline ได้ 100% เพราะมีเพลงในเครื่อง ไม่ต้องต่อเน็ตเพื่อเริ่มใช้งาน
-    2. การต่อ MPad2: กด F1 เพื่อโชว์ QR Code บนจอ TV แล้วใช้แอป Mpad2 ในมือถือแสกนเชื่อมต่อ
-    3. สำคัญ: มือถือและเครื่อง MBOX ต้องอยู่บนวง WiFi ชื่อเดียวกันเพื่อให้แอปหาเครื่องเจอ
-    4. ลิขสิทธิ์: ร้านอาหารต้องขออนุญาต ติดต่อ LINE: @mboxkaraoke
-    5. คีย์ลัด: F1(QR), F8(เสียง), TAB(สลับค้นหา/คิว), F10(ข้าม), INSERT(แทรก)
-    ตอบเป็นภาษาไทยที่สุภาพ ชัดเจน และตรงไปตรงมา`;
-
-    async function callGemini(query) {
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-        const payload = {
-            contents: [{ parts: [{ text: query }] }],
-            systemInstruction: { parts: [{ text: systemPrompt }] }
-        };
-        let delay = 1000;
-        for (let i = 0; i < 5; i++) {
-            try {
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                if (response.ok) {
-                    const data = await response.json();
-                    return data.candidates?.[0]?.content?.parts?.[0]?.text;
-                }
-            } catch (err) {}
-            await new Promise(r => setTimeout(r, delay));
-            delay *= 2;
-        }
-        return "ขออภัยครับ ระบบ AI ขัดข้องชั่วคราว กรุณาลองใหม่อีกครั้ง หรือติดต่อ Line: @mboxkaraoke ครับ";
-    }
-
-    const chatBox = document.getElementById('ai-chat-box');
-    const aiInput = document.getElementById('ai-input');
-    const sendBtn = document.getElementById('ai-send-btn');
-
-    async function handleAISubmit() {
-        const text = aiInput.value.trim();
-        if (!text) return;
-        appendMessage('user', text);
-        aiInput.value = '';
-        const loadingId = 'loading-' + Date.now();
-        const loadingBubble = document.createElement('div');
-        loadingBubble.id = loadingId;
-        loadingBubble.className = 'ai-bubble p-6 rounded-[2rem] max-w-[85%]';
-        loadingBubble.innerHTML = '<p class="text-xl animate-pulse">กำลังคิด...</p>';
-        chatBox.appendChild(loadingBubble);
-        chatBox.scrollTop = chatBox.scrollHeight;
-        const aiResponse = await callGemini(text);
-        document.getElementById(loadingId).remove();
-        appendMessage('ai', aiResponse);
-    }
-
-    function appendMessage(role, text) {
-        const bubble = document.createElement('div');
-        bubble.className = role === 'user' 
-            ? 'bg-slate-800 p-6 rounded-[2rem] max-w-[85%] ml-auto border border-slate-700 shadow-xl' 
-            : 'ai-bubble p-6 rounded-[2rem] max-w-[85%] shadow-xl text-white';
-        bubble.innerHTML = `<p class="text-xl leading-relaxed">${text.replace(/\n/g, '<br>')}</p>`;
-        chatBox.appendChild(bubble);
-        chatBox.scrollTop = chatBox.scrollHeight;
-    }
-
-    function askAI(question) {
-        aiInput.value = question;
-        handleAISubmit();
-    }
-
-    sendBtn.addEventListener('click', handleAISubmit);
-    aiInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleAISubmit(); });
-</script>
-
-</body>
-</html>
+<div class="grid">
+ <div class="card"><h4>🛡️ การรับประกัน 1 ปี</h4><p>นับจากวันที่เปิดเครื่องครั้งแรก ครอบคลุมความบกพร่องจากการผลิตภายใต้การใช้งานปกติ รวมค่าซ่อม ค่าอะไหล่ และค่าแรงช่าง หากซ่อมไม่ได้ในเวลาอันสมควรและอยู่ภายใน 15 วันหลังสั่งซื้อ อาจพิจารณาเปลี่ยนเครื่องใหม่ตามดุลยพินิจของบริษัท</p></div>
+ <div class="card"><h4>🚫 ไม่อยู่ในการรับประกัน</h4><ul class="dots"><li>ตกหล่น / แตกหัก</li><li>น้ำเข้าเครื่อง</li><li>ไฟกระชาก</li><li>แกะเครื่องเอง หรือซ่อมนอกศูนย์</li><li>ใช้งานผิดประเภท</li><li>Factory Reset หรือ Format เครื่อง</li></ul></div>
+ <div class="card"><h4>💬 แจ้งปัญหา / ติดต่อทีม MBOX</h4><p>กรอกแบบฟอร์มบริการหลังการขาย หรือติดต่อ LINE <b>@mboxkaraoke</b> · โทร 086-552-5502 / 086-321-3965<br>ตอบกลับภายใน 24 ชม. ดำเนินการภายใน 72 ชม.</p><p style="margin-top:10px"><a class="btn" href="https://forms.gle/ZXPGyYwVYWiWHj18A">แจ้งบริการหลังการขาย</a></p></div>
+</div>
+</div></section>
+<footer><div class="wrap"><div class="row">
+<img src="mbox-logo.png" alt="MBOX">
+<span>LINE <a href="https://line.me/R/ti/p/@mboxkaraoke">@mboxkaraoke</a></span>
+<span>โทร <a href="tel:0865525502">086-552-5502</a> / <a href="tel:0863213965">086-321-3965</a></span>
+<a href="https://forms.gle/ZXPGyYwVYWiWHj18A">แบบฟอร์มแจ้งบริการหลังการขาย</a>
+</div><p style="margin-top:10px">ทีมงานตอบกลับภายใน 24 ชั่วโมง และดำเนินการภายใน 72 ชั่วโมง · อัปเดตล่าสุด ต.ค. 2569 · © MBOX Multimedia</p></div></footer>
+</body></html>
